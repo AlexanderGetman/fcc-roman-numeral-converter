@@ -1,6 +1,6 @@
-const input = document.getElementById("number")
-const convertBtn = document.getElementById("convert-btn")
-const output = document.getElementById("output")
+const input = document.getElementById("number");
+const convertBtn = document.getElementById("convert-btn");
+const output = document.getElementById("output");
 
 const romanNumerals = {
     "M": 1000,
@@ -16,15 +16,15 @@ const romanNumerals = {
     "V": 5,
     "IV": 4,
     "I": 1
-}
+};
 
 const convertNumeral = (input) => {
     for (const [key, value] of Object.entries(romanNumerals)) {
         if (input < 1) {
-            return ""
+            return "";
         }
         else if (input >= value) {            
-            return key.repeat(Math.floor(input / value)) + convertNumeral(input % value)
+            return key.repeat(Math.floor(input / value)) + convertNumeral(input % value);
         }
       }
 }
@@ -32,22 +32,22 @@ const convertNumeral = (input) => {
 const returnOutput = () => {
     const inputValue = input.value
     if (!inputValue) {
-        output.innerText = "Please enter a valid number"
+        output.innerText = "Please enter a valid number";
     } else if (inputValue < 1) {
-        output.innerText = "Please enter a number greater than or equal to 1"
+        output.innerText = "Please enter a number greater than or equal to 1";
     } else if (inputValue > 3999) {
-        output.innerText = "Please enter a number less than or equal to 3999"
+        output.innerText = "Please enter a number less than or equal to 3999";
     } else {
-        output.innerText = convertNumeral(inputValue)
+        output.innerText = convertNumeral(inputValue);
     }
 }
 
 convertBtn.addEventListener("click", () => {
-    returnOutput()
+    returnOutput();
 })
 
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-        returnOutput()
+        returnOutput();
     }
 })
