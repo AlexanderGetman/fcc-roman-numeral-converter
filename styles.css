@@ -1,0 +1,103 @@
+:root {
+    /* colors */
+    --text-color: #4d3e3e;
+    --placeholder-color: #4d3e3e54;
+    --primary-color: #ffffff;
+    --secondary-color: #f0f0f0;
+    --app-background-color: #4d4d62;
+  
+    /* font sizes */
+    --root-font-size: 16px;
+    font-size: var(--root-font-size);
+  
+    /* font-families */
+    --font-headline: "Roboto Mono", monospace;
+    --font-family: "Lato", sans-serif;
+}
+  
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: var(--app-background-color);
+    color: var(--primary-color);
+    font-family: var(--font-family);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#converter-wrapper {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(100vw, 500px);
+    min-height: 150px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px 1px var(--text-color);
+    padding-top: 20px;
+}
+
+#number-label {
+    color: var(--text-color);
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+#number {
+    width: 70%;
+    height: 25px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid var(--secondary-color);
+    transition: .3s ease;
+}
+
+#number::placeholder {
+    color: var(--placeholder-color);
+}
+
+
+#number:focus {
+    background: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--text-color);
+}
+
+#convert-btn {
+	background-color: var(--app-background-color);
+	border-radius: 25px;
+	border: 1px solid var(--secondary-color);
+	display:inline-block;
+	cursor:pointer;
+	color: var(--primary-color);
+	text-decoration: none;
+    padding: 1% 10%;
+}
+
+#convert-btn:hover {
+	background-color: var(--placeholder-color);
+}
+
+#convert-btn:active {
+	position: relative;
+	top: 1px;
+}
+
+#output {
+    color: var(--text-color);
+    font-size: 1.2em;
+}
