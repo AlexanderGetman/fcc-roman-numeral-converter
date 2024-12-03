@@ -27,7 +27,7 @@ const convertNumeral = (input) => {
             return key.repeat(Math.floor(input / value)) + convertNumeral(input % value);
         }
       }
-};
+}
 
 const returnOutput = () => {
     const inputValue = input.value
@@ -40,7 +40,7 @@ const returnOutput = () => {
     } else {
         output.innerText = convertNumeral(inputValue);
     }
-};
+}
 
 convertBtn.addEventListener("click", () => {
     returnOutput();
